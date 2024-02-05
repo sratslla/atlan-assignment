@@ -1,0 +1,31 @@
+.home-bottom-text {
+	/* font-size: xx-large; */
+	font-weight: 700;
+	text-align: center;
+	/* white-space: nowrap; */
+	display: block;
+}
+.circle-word-container > span {
+	color: #f26822;
+}
+.circle-word-long {
+	display: block;
+	background-image: url(https://markmanson.net/wp-content/themes/mm-main/images/circle-word-long.svg);
+	padding-left: 10px;
+	padding-right: 10px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+.home-bottom-buttons > button {
+	border-radius: 5px;
+	background-color: transparent;
+	font-size: x-large;
+	color: black;
+}
+.home-bottom-buttons > button:hover {
+	border-radius: 5px;
+	background-color: black;
+	font-size: x-large;
+	color: white;
+}
