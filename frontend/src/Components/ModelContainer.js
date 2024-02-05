@@ -70,11 +70,11 @@ const ModelContainer = ({
 
 	return (
 		<div className="rounded-md border border-[#b5b3b3] backdrop-blur-xl p-2 m-2">
-			<img
+			{/* <img
 				src={modelURL}
 				alt="Laptop"
 				className="h-[200px] w-full rounded-md object-cover"
-			/>
+			/> */}
 			<div className="p-4">
 				<div className="flex flex-row justify-between">
 					<h1 className="text-lg font-semibold">{modelName}</h1>

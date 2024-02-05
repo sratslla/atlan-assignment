@@ -44,7 +44,9 @@ app.get("/api/numberOfModels", (req, res) => {
 	res.json(numberOfModels);
 });
 app.get("/api/topModel", (req, res) => {
-	const topModelData = data.sort((a, b) => b.likes - a.likes).slice(0, 20);
+	const topModelData = [...data]
+		.sort((a, b) => b.likes - a.likes)
+		.slice(0, 20);
 	res.json(topModelData);
 });
 
