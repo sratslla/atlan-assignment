@@ -22,9 +22,12 @@ const ModelContainer = ({
 	}, []);
 
 	async function likeModel(id) {
-		const response = await fetch(`http://localhost:5000/api/like/${id}`, {
-			method: "POST",
-		});
+		const response = await fetch(
+			process.env.REACT_APP_API_URL + `/api/like/${id}`,
+			{
+				method: "POST",
+			}
+		);
 		const result = await response.json();
 		if (result.success) {
 			toast.success("Favorite Added");
@@ -45,7 +48,7 @@ const ModelContainer = ({
 	}
 	async function dislikeModel(id) {
 		const response = await fetch(
-			`http://localhost:5000/api/dislike/${id}`,
+			process.env.REACT_APP_API_URL + `/api/dislike/${id}`,
 			{
 				method: "POST",
 			}

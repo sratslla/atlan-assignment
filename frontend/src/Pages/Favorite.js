@@ -13,9 +13,8 @@ const Favorite = () => {
 			if (data == null || data.length === 0) {
 				setIsEmpty(true);
 			} else {
-				console.log(data);
 				const response = await fetch(
-					"http://localhost:5000/api/favoriteModel",
+					process.env.REACT_APP_API_URL + "/api/favoriteModel",
 					{
 						method: "POST",
 						headers: {
@@ -26,8 +25,6 @@ const Favorite = () => {
 				);
 				setData(await response.json());
 				setIsEmpty(false);
-				console.log(Data);
-				console.log(localStorage.getItem("favoriteModel"));
 			}
 		};
 		init();

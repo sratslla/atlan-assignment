@@ -6,7 +6,9 @@ const TopModel = () => {
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		const getTopModel = async () => {
-			const response = await fetch("http://localhost:5000/api/topModel");
+			const response = await fetch(
+				process.env.REACT_APP_API_URL + "/api/topModel"
+			);
 			const result = await response.json();
 			setData(result);
 		};

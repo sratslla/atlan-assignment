@@ -7,16 +7,15 @@ import toast from "react-hot-toast";
 
 const ModelPage = () => {
 	const modelId = useParams().modelId;
-	console.log(modelId);
 	const [data, setData] = useState({ model: {}, suggestionModel: [] });
 	useEffect(() => {
 		const getModelData = async () => {
 			const response = await fetch(
-				`http://localhost:5000/api/modelsPage/?modelId=${modelId}`
+				process.env.REACT_APP_API_URL +
+					`/api/modelsPage/?modelId=${modelId}`
 			);
 			const result = await response.json();
 			setData(result);
-			console.log(modelId, data);
 		};
 
 		getModelData();
@@ -32,9 +31,12 @@ const ModelPage = () => {
 	}, []);
 
 	async function likeModel(id) {
-		const response = await fetch(`http://localhost:5000/api/like/${id}`, {
-			method: "POST",
-		});
+		const response = await fetch(
+			process.env.REACT_APP_API_URL + `/api/like/${id}`,
+			{
+				method: "POST",
+			}
+		);
 		const result = await response.json();
 		if (result.success) {
 			toast.success("Favorite Added");
@@ -55,7 +57,7 @@ const ModelPage = () => {
 	}
 	async function dislikeModel(id) {
 		const response = await fetch(
-			`http://localhost:5000/api/dislike/${id}`,
+			process.env.REACT_APP_API_URL + `/api/dislike/${id}`,
 			{
 				method: "POST",
 			}

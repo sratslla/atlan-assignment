@@ -37,14 +37,16 @@ const UploadModel = () => {
 		});
 	};
 	const init = async () => {
-		const response = await fetch("http://localhost:5000/api/uploadModel", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(formData),
-		});
-		console.log(response.status);
+		const response = await fetch(
+			process.env.REACT_APP_API_URL + "/api/uploadModel",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			}
+		);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -64,7 +66,6 @@ const UploadModel = () => {
 		setTimeout(() => {
 			navigate(`/Models/${formData.id}`);
 		}, 1000);
-		console.log(formData);
 	};
 
 	return (

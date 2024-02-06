@@ -3,7 +3,7 @@ import React from "react";
 const TagComponent = ({ TagTitle, TagList, setData, setscroll }) => {
 	const tagClicked = async (tag) => {
 		const response = await fetch(
-			`http://localhost:5000/api/models?tag=${tag}`
+			process.env.REACT_APP_API_URL + `/api/models?tag=${tag}`
 		);
 		setData(await response.json());
 		setscroll(false);

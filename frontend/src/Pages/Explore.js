@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../Components/Navbar";
 
 import ModelContainer from "../Components/ModelContainer";
@@ -20,7 +20,7 @@ const Explore = () => {
 		if (query.length > 2) {
 			setscroll(false);
 			const response = await fetch(
-				`http://localhost:5000/api/models?search=${query}`
+				process.env.REACT_APP_API_URL + `/api/models?search=${query}`
 			);
 			const result = await response.json();
 			setData(result);
@@ -28,7 +28,7 @@ const Explore = () => {
 		} else if (query.length <= 2) {
 			setscroll(true);
 			const response = await fetch(
-				`http://localhost:5000/api/models?search=${query}`
+				process.env.REACT_APP_API_URL + `/api/models?search=${query}`
 			);
 			const result = await response.json();
 			setData(result);
@@ -36,26 +36,19 @@ const Explore = () => {
 	};
 
 	const loadMoreData = async () => {
-		console.log("more data loading", loadedItems);
 		const response = await fetch(
-			`http://localhost:5000/api/models?offset=${loadedItems}`
+			process.env.REACT_APP_API_URL + `/api/models?offset=${loadedItems}`
 		);
 		const newData = await response.json();
 		setData([...data, ...newData]);
 		setLoadedItems(loadedItems + newData.length);
-		console.log(newData, "more data loaded");
-		// Adjust the delay as needed
 	};
 
 	const handleScroll = () => {
 		if (containerRef) {
 			const { scrollTop, scrollHeight, clientHeight } =
 				containerRef.current;
-			// console.log("Scroll Top:", scrollTop);
-			// console.log("Scroll Height:", scrollHeight);
-			// console.log("Client Height:", clientHeight);
 			if (scrollTop + clientHeight >= scrollHeight && scroll) {
-				console.log("Lazy loading implemented", loadedItems);
 				loadMoreData();
 			}
 		}
@@ -79,7 +72,7 @@ const Explore = () => {
 	const resetData = async () => {
 		setLoadedItems(0);
 		const response = await fetch(
-			`http://localhost:5000/api/models?offset=${0}`
+			process.env.REACT_APP_API_URL + `/api/models?offset=${0}`
 		);
 		setData(await response.json());
 		setLoadedItems(10);

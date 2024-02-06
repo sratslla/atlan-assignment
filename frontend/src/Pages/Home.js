@@ -10,7 +10,7 @@ const Home = () => {
 	useEffect(() => {
 		const init = async () => {
 			const response = await fetch(
-				"http://localhost:5000/api/numberOfModels"
+				process.env.REACT_APP_API_URL + "/api/numberOfModels"
 			);
 			setNumberOfModels(await response.json());
 		};
