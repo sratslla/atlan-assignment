@@ -24,7 +24,7 @@ const Navbar = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 	return (
-		<div className="relative w-full bg-[#264658] border-b font-mono ">
+		<div className="relative w-full bg-[#264658] border-b font-[Outfit,sans-serif]">
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
 				<div className="inline-flex items-center space-x-2">
 					<button
@@ -33,7 +33,9 @@ const Navbar = () => {
 						}}
 						className="hover:cursor-pointer hover:font-bold hover:text-[#f26822] text-[#D3FBD8]"
 					>
-						<span className="font-bold">ModelHub</span>
+						<span className="font-bold text-2xl font-[Outfit,sans-serif]">
+							ModelHub
+						</span>
 					</button>
 				</div>
 				<div className="hidden md:block">
@@ -42,7 +44,7 @@ const Navbar = () => {
 							<li key={item.name}>
 								<a
 									href={item.href}
-									className="text-sm font-semibold hover:text-[#f26822] text-[#D3FBD8]"
+									className="text-lg font-semibold hover:text-[#f26822] text-[#D3FBD8]"
 								>
 									{item.name}
 								</a>
@@ -56,7 +58,7 @@ const Navbar = () => {
 						onClick={() => {
 							navigate("/UploadModel");
 						}}
-						className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+						className="hover:text-[#f26822] text-[#D3FBD8] rounded-lg bg-black px-3 py-2 text-lg font-semibold shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 					>
 						Upload Model
 					</button>

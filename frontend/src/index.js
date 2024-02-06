@@ -4,6 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./Pages/Home";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Favorite from "./Pages/Favorite";
 import TopModel from "./Pages/TopModel";
 import Explore from "./Pages/Explore";
@@ -21,6 +22,18 @@ const router = createBrowserRouter([
 ]);
 root.render(
 	<React.StrictMode>
+		<div>
+			<Toaster
+				position="top-right"
+				toastOptions={{
+					success: {
+						theme: {
+							primary: "#4aed88",
+						},
+					},
+				}}
+			></Toaster>
+		</div>
 		<RouterProvider router={router} />
 	</React.StrictMode>
 );

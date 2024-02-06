@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600&display=swap");
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -11,7 +13,7 @@
 }
 
 ::-webkit-scrollbar {
-	width: 1vw;
+	width: 0.75vw;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,12 +25,12 @@
 	background: #d3fbd8;
 	border: solid 1px black;
 	height: 5vh;
-	border-radius: 20px;
+	/* border-radius: 20px; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #f26822;
-	border: 2px solid white;
+	background: #f79463;
+	/* border: 2px solid white; */
 	height: 5vh;
-	border-radius: 20px;
+	/* border-radius: 20px; */
 }

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Navbar from "../Components/Navbar";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const UploadModel = () => {
-	const randomId = uuidv4();
+	const navigate = useNavigate();
 	const imageArray = [
 		"https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt9b3bcf98b4cd9012/64c9829c84ac5d42cf1b8f35/Untitled_design_-_2023-08-01T170921.666.png?width=850&auto=webp&quality=95&format=jpg&disable=upscale",
 		"https://vectara.com/wp-content/uploads/2023/05/code-generation-image.jpg",
@@ -16,6 +18,7 @@ const UploadModel = () => {
 		"https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
 	];
 	const randomNumber = Math.floor(Math.random() * 9);
+	const randomId = parseInt(uuidv4().replace(/\D/g, ""));
 	const [formData, setFormData] = useState({
 		id: randomId,
 		name: "",
@@ -45,7 +48,22 @@ const UploadModel = () => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		if (
+			formData.name.trim() === "" ||
+			formData.category.trim() === "" ||
+			formData.description.trim() === "" ||
+			formData.provider.trim() === "" ||
+			formData.codeSnippet.trim() === ""
+		) {
+			toast.error("Please fill in all fields");
+			return;
+		}
 		init();
+		toast.success("Model Added");
+		setTimeout(() => {
+			navigate(`/Models/${formData.id}`);
+		}, 1000);
 		console.log(formData);
 	};
 
@@ -74,7 +92,7 @@ const UploadModel = () => {
 							name="name"
 							value={formData.name}
 							onChange={handleChange}
-							className="mt-1 p-2 w-full border rounded-md"
+							className="mt-1 p-2 w-full border border-black rounded-md"
 						/>
 					</div>
 
@@ -91,7 +109,7 @@ const UploadModel = () => {
 							name="provider"
 							value={formData.provider}
 							onChange={handleChange}
-							className="mt-1 p-2 w-full border rounded-md"
+							className="mt-1 p-2 w-full border rounded-md border-black "
 						/>
 					</div>
 
@@ -107,7 +125,7 @@ const UploadModel = () => {
 							name="category"
 							value={formData.category}
 							onChange={handleChange}
-							className="mt-1 p-2 w-full border rounded-md"
+							className="mt-1 p-2 w-full border rounded-md border-black "
 						>
 							<option value="">Select a category</option>
 							<option value="Feature Extraction">
@@ -154,7 +172,7 @@ const UploadModel = () => {
 							name="description"
 							value={formData.description}
 							onChange={handleChange}
-							className="mt-1 p-2 w-full border rounded-md"
+							className="mt-1 p-2 w-full border rounded-md border-black "
 							rows="4"
 						></textarea>
 					</div>
@@ -171,7 +189,7 @@ const UploadModel = () => {
 							name="codeSnippet"
 							value={formData.codeSnippet}
 							onChange={handleChange}
-							className="mt-1 p-2 w-full border rounded-md"
+							className="mt-1 p-2 w-full border rounded-md border-black "
 							rows="2"
 						></textarea>
 					</div>

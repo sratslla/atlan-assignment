@@ -22,28 +22,19 @@ const Home = () => {
 			<Navbar />
 			<div className="flex flex-wrap justify-center items-center">
 				<Sphere />
-				<h4 className=" font-serif text-3xl  home-bottom-text text-[#D3FBD8]">
-					<div class="circle-word-container">
-						<span class="circle-word-long">
+				<h4 className="text-3xl  home-bottom-text text-[#D3FBD8] font-[Outfit,sans-serif]">
+					<div className="circle-word-container">
+						<span className="circle-word-long font-[Outfit,sans-serif]">
 							{numberOfModels} Models
 						</span>
 					</div>
 					Ready to dive into the world of AI models?
-					<div className="home-bottom-buttons">
-						<button
-							onClick={() => {
-								navigate("/explore");
-							}}
-						>
-							Explore
-						</button>
-						<button> Upload your own Model</button>
-					</div>
+					<div className="home-bottom-buttons"></div>
 				</h4>
 			</div>
-			<div className="mx-auto max-w-7xl px-2 pb-4 lg:px-8">
+			<div className="mx-auto max-w-7xl px-2 pb-4 lg:px-8 ">
 				<div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
-					<div className="font-serif">
+					<div className="font-[Outfit,sans-serif]">
 						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full  bg-blue-100">
 							<svg
 								className="h-9 w-9 text-blue-600 bg-transparent"
@@ -69,7 +60,7 @@ const Home = () => {
 							to integrate AI seamlessly into your projects.
 						</p>
 					</div>
-					<div className="font-serif">
+					<div className="font-[Outfit,sans-serif]">
 						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100">
 							<svg
 								className="h-9 w-9 text-orange-600 bg-transparent"
@@ -87,15 +78,15 @@ const Home = () => {
 							</svg>
 						</div>
 						<h3 className="mt-8 text-lg font-semibold text-[#f26822]">
-							Fast & Easy to Load
+							Top Models Showcase
 						</h3>
 						<p className="mt-4 text-sm text-[#93cbf1]">
-							Amet minim mollit non deserunt ullamco est sit
-							aliqua dolor do amet sint. Velit officia consequat
-							duis enim velit mollit.
+							Dive into our collection of cutting-edge AI models,
+							showcasing the latest advancements across a variety
+							of categories and industries.
 						</p>
 					</div>
-					<div className="font-serif">
+					<div className="font-[Outfit,sans-serif]">
 						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
 							<svg
 								className="h-9 w-9 text-green-600 bg-transparent"
@@ -113,15 +104,16 @@ const Home = () => {
 							</svg>
 						</div>
 						<h3 className="mt-8 text-lg font-semibold text-[#f26822]">
-							Light & Dark Version
+							Upload Your Model
 						</h3>
 						<p className="mt-4 text-sm text-[#93cbf1]">
-							Amet minim mollit non deserunt ullamco est sit
-							aliqua dolor do amet sint. Velit officia consequat
-							duis enim velit mollit.
+							Join our community of developers and organizations
+							by sharing your own AI model. Showcase your
+							expertise and contribute to the ever-expanding
+							landscape of AI innovation.
 						</p>
 					</div>
-					<div className="font-serif">
+					<div className="font-[Outfit,sans-serif]">
 						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
 							<svg
 								className="h-9 w-9 text-red-600 bg-transparent"
@@ -139,12 +131,13 @@ const Home = () => {
 							</svg>
 						</div>
 						<h3 className="mt-8 text-lg font-semibold text-[#f26822]">
-							Filter Blocks
+							Search Models
 						</h3>
 						<p className="mt-4 text-sm text-[#93cbf1]">
-							Amet minim mollit non deserunt ullamco est sit
-							aliqua dolor do amet sint. Velit officia consequat
-							duis enim velit mollit.
+							Easily find the perfect AI model for your needs
+							using our intuitive search feature. Filter by
+							category, performance metrics, and more to discover
+							the ideal solution for your project.
 						</p>
 					</div>
 				</div>

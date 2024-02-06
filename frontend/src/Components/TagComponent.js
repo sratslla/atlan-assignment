@@ -1,29 +1,28 @@
 import React from "react";
 
-const TagComponent = ({ TagTitle, TagList, setData }) => {
+const TagComponent = ({ TagTitle, TagList, setData, setscroll }) => {
 	const tagClicked = async (tag) => {
 		const response = await fetch(
 			`http://localhost:5000/api/models?tag=${tag}`
 		);
 		setData(await response.json());
+		setscroll(false);
 	};
 
 	return (
-		<div className="flex flex-col p-2">
-			<p className="font-semibold font-serif underline underline-offset-4 pl-1">
-				{TagTitle}
-			</p>
+		<div className="flex flex-col p-1 font-[Outfit,sans-serif] pb-4 border-b border-gray-400">
+			<p className="font-bold text-xl pl-1">{TagTitle}</p>
 			<div className="flex flex-wrap p-1">
 				<div className="rounded-lg border hover:bg-black hover:cursor-pointer hover:border-2 p-1 m-1 border-[#818a9c] flex flex-row items-center group">
 					<svg
-						class="pr-1 "
+						className="pr-1 "
 						xmlns="http://www.w3.org/2000/svg"
 						aria-hidden="true"
 						fill="#f26822"
 						focusable="false"
 						role="img"
-						width="2em"
-						height="2em"
+						width="1.5em"
+						height="1.5em"
 						preserveAspectRatio="xMidYMid meet"
 						viewBox="0 0 32 32"
 					>
@@ -33,7 +32,7 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						onClick={() => {
 							tagClicked(TagList[0]);
 						}}
-						className="font-serif group-hover:text-white "
+						className=" group-hover:text-white "
 					>
 						{TagList[0]}
 					</span>
@@ -45,8 +44,8 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						fill="#facf86"
 						focusable="false"
 						role="img"
-						width="2em"
-						height="2em"
+						width="1.5em"
+						height="1.5em"
 						preserveAspectRatio="xMidYMid meet"
 						viewBox="0 0 32 32"
 					>
@@ -67,7 +66,7 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						onClick={() => {
 							tagClicked(TagList[1]);
 						}}
-						className="font-serif group-hover:text-white"
+						className=" group-hover:text-white"
 					>
 						{TagList[1]}
 					</span>
@@ -77,8 +76,8 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						xmlns="http://www.w3.org/2000/svg"
 						aria-hidden="true"
 						role="img"
-						width="2em"
-						height="2em"
+						width="1.5em"
+						height="1.5em"
 						preserveAspectRatio="xMidYMid meet"
 						viewBox="0 0 32 32"
 					>
@@ -99,13 +98,18 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						onClick={() => {
 							tagClicked(TagList[2]);
 						}}
-						className="font-serif group-hover:text-white"
+						className=" group-hover:text-white"
 					>
 						{TagList[2]}
 					</span>
 				</div>
 				<div className="rounded-lg border hover:bg-black hover:cursor-pointer hover:border-2 p-1 m-1 border-[#818a9c] flex flex-row items-center group">
-					<svg class="" width="2em" height="2em" viewBox="0 0 32 32">
+					<svg
+						className=""
+						width="1.5em"
+						height="1.5em"
+						viewBox="0 0 32 32"
+					>
 						<path
 							d="M29.474 19.12L23.681 16l5.793-3.12a1 1 0 0 0 0-1.76l-13-7a.998.998 0 0 0-.948 0l-13 7a1 1 0 0 0 0 1.76L8.319 16l-5.793 3.12a1 1 0 0 0 0 1.76l13 7a1 1 0 0 0 .948 0l13-7a1 1 0 0 0 0-1.76zM16 6.136L26.89 12L16 17.864L5.11 12zm0 19.728L5.11 20l5.319-2.864l5.097 2.744a1 1 0 0 0 .948 0l5.097-2.745L26.891 20z"
 							fill="#f6a723"
@@ -115,7 +119,7 @@ const TagComponent = ({ TagTitle, TagList, setData }) => {
 						onClick={() => {
 							tagClicked(TagList[3]);
 						}}
-						className="font-serif group-hover:text-white"
+						className=" group-hover:text-white"
 					>
 						{TagList[3]}
 					</span>

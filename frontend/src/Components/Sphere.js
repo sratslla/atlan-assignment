@@ -3,7 +3,7 @@ import { TagCloud } from "@frank-mayer/react-tag-cloud";
 
 const Sphere = () => {
 	const tagCloudOptions = (w) => ({
-		radius: Math.min(500, w.innerWidth, w.innerHeight) / 1.5,
+		radius: Math.min(w.innerWidth, w.innerHeight) / 2,
 		maxSpeed: "fast",
 	});
 
@@ -12,7 +12,7 @@ const Sphere = () => {
 	};
 
 	return (
-		<div className="Sphere">
+		<div className="Sphere hidden md:block">
 			<TagCloud
 				options={tagCloudOptions}
 				onClick={handleClick}
@@ -20,7 +20,8 @@ const Sphere = () => {
 				style={{
 					fontWeight: "bold",
 					color: "#93cbf1",
-					fontFamily: "sans-serif",
+					fontFamily: "Outfit, sans-serif",
+					textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)", // Adding text shadow for better visibility
 				}}
 			>
 				{[
@@ -36,9 +37,14 @@ const Sphere = () => {
 					"AlexNet",
 					"MobileNet",
 					"U-Net",
-					"XGBoost ",
+					"XGBoost",
 					"Random Forest",
-					"SVM ",
+					"SVM",
+					"CapsNet",
+					"GPT-4",
+					"EfficientNet",
+					"WaveNet",
+					"DCGAN",
 				]}
 			</TagCloud>
 		</div>

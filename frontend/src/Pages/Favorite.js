@@ -10,7 +10,7 @@ const Favorite = () => {
 	useEffect(() => {
 		const init = async () => {
 			const data = JSON.parse(localStorage.getItem("favoriteModel"));
-			if (data.length === 0) {
+			if (data == null || data.length === 0) {
 				setIsEmpty(true);
 			} else {
 				console.log(data);
