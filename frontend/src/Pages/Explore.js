@@ -82,7 +82,7 @@ const Explore = () => {
 		<>
 			<Navbar />
 			<div className="w-full m-0 p-0 flex flex-row overflow-hidden ">
-				<div className="w-[27vw] h-[90vh] overflow-y-scroll bg-[#f3f4f4] pt-1 ">
+				<div className="w-[27vw] h-[90vh] overflow-y-scroll bg-[#f3f4f4] pt-1 hidden md:block">
 					<div className="flex justify-end pr-3">
 						<button
 							className="ml-2 flex h-7 items-center whitespace-nowrap rounded-full border bg-white px-3 text-sm text-gray-600 decoration-gray-300 shadow-sm hover:bg-gray-50 hover:text-gray-800 justify-end"
@@ -142,7 +142,7 @@ const Explore = () => {
 					/>
 				</div>
 				<div
-					className="flex flex-col w-[77vw] h-[90vh] overflow-y-scroll overflow-x-hidden"
+					className="flex flex-colw-screen md:w-[77vw] h-[90vh] overflow-y-scroll overflow-x-hidden"
 					ref={containerRef}
 				>
 					<div className="flex flex-col items-center">
