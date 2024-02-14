@@ -19,7 +19,6 @@ const UploadModel = () => {
 	];
 	const randomNumber = Math.floor(Math.random() * 9);
 	const randomId = Math.floor(Math.random() * 1e10) + 150;
-	console.log(randomId);
 	const [formData, setFormData] = useState({
 		id: randomId,
 		name: "",
