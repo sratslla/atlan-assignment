@@ -11,6 +11,10 @@ The project is built using **React** and **Node.js** as the server to host the d
 - React Hot Toast
 - UUID
 
+## Score
+![image](https://github.com/sratslla/atlan-assignment/assets/93277471/75c70b27-4bfe-4bca-ab6c-d58d491d3d7a)
+
+
 ## Optimization Strategies
 I haven't stored any static data such as a list of models on the client side. Instead, all data is retrieved from the Node.js server, hosted on DigitalOcean. Additionally, I've integrated **Lazy Loading** on the main Explore Page to fetch only the necessary data, thereby reducing the overall load on the user's device.
 
